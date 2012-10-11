@@ -1,0 +1,17 @@
+name: vdbench
+summary: "Vdbench is a disk and tape I/O workload generator"
+description: |
+  Vdbench is a disk and tape I/O workload generator for verifying data 
+  integrity and measuring performance of direct attached and network
+  connected storage on Windows, Solaris, Linux, AIX, OS/X and HP/UX.
+  Download the source at http://vdbench.sourceforge.net/.
+  - Implemented in Java
+  - Easy to customize workloads using:
+
+  /vdbench [compare] [gui] [dvpost] [edit] [jstack] [parse] [print] 
+  [sds] [rsh] for some Vdbench utility functions
+  - Additional examples and option specifications in the source tar.
+provides:
+  website:
+    interface: http
+
