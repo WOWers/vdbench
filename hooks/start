@@ -1,12 +1,12 @@
 #!/bin/bash
-# Here put anything that is needed to start the service.
-# Note that currently this is run directly after install
-# i.e. 'service apache2 start'
-
-#HOME=$(dirname $0)
-#$HOME/vdbench -t
-
 set -eux # -x for verbose logging to juju debug-log
-juju-log "Starting vdbench"
-./vdbench -t
-
+if pidof -x vdbench > /dev/null
+then
+  juju-log "Vdbench already running"
+else
+  juju-log "Starting vdbench"
+  ./vdbench -t
+  open-port 80/tcp
+  cp -a /var/lib/juju/units/vdbench*/charm/output/ /var/www/
+  rm /var/www/index.html
+fi

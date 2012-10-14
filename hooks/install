@@ -1,14 +1,10 @@
 #!/bin/bash
-# Here do anything needed to install the service
-# i.e. apt-get install -y foo  or  bzr branch http://myserver/mycode /srv/webroot
-
 set -eux # -x for verbose logging to juju debug-log
 juju-log "Installing open jdk"
-apt-get install -y openjdk-6-jre-headless
+apt-get install -y default-jre-headless apache2
 
+#install vbench
 juju-log "Installing vdbench"
-wget http://downloads.sourceforge.net/project/vdbench/vdbench502.tar
-tar -xvf vdbench*
+tar -xvf vdbench*.tar
 cp /bin/bash /bin/csh
 cp vdbench.bash vdbench
-
