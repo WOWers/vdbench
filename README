@@ -1,6 +1,4 @@
 juju charm vdbench
-author: Ameet Paranjape <ameet@ubuntu.com>
-maintainer: Ameet Paranjape <ameet@ubuntu.com>
 
 1. Deploy example 
 2. Additional information

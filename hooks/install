@@ -1,10 +1,11 @@
 #!/bin/bash
-set -eux # -x for verbose logging to juju debug-log
+set -eu # -x for verbose logging to juju debug-log
 juju-log "Installing open jdk"
 apt-get install -y default-jre-headless apache2
 
 #install vbench
 juju-log "Installing vdbench"
-tar -xvf vdbench*.tar
+mkdir vdbench
+tar -xvf vdbench*.tar -C vdbench
 cp /bin/bash /bin/csh
-cp vdbench.bash vdbench
+cp vdbench/vdbench.bash vdbench/vdbench

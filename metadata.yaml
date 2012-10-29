@@ -1,5 +1,6 @@
 name: vdbench
 summary: "Vdbench is a disk and tape I/O workload generator"
+maintainer: "Ameet Paranjape <ameet@ubuntu.com>"
 description: |
   Vdbench is a disk and tape I/O workload generator for verifying data 
   integrity and measuring performance of direct attached and network

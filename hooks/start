@@ -1,12 +1,15 @@
 #!/bin/bash
-set -eux # -x for verbose logging to juju debug-log
+set -eu # -x for verbose logging to juju debug-log
 if pidof -x vdbench > /dev/null
 then
   juju-log "Vdbench already running"
 else
   juju-log "Starting vdbench"
-  ./vdbench -t
+  cd vdbench
+  ./vdbench -t 
   open-port 80/tcp
-  cp -a /var/lib/juju/units/vdbench*/charm/output/ /var/www/
+  cp -a /var/lib/juju/units/vdbench*/charm/vdbench/output/ \
+    /var/www/$(date +%F_%T)"_vdbench_output"	
+  rm -rf /var/lib/juju/units/vdbench*/charm/vdbench/output
   rm /var/www/index.html
 fi
