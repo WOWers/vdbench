@@ -1,6 +1,5 @@
 #!/bin/bash
 set -eu # -x for verbose logging to juju debug-log
 juju-log "Update vdbench charm"
-hook/stop
-hook/install
-hook/start
+hooks/stop
+hooks/start

@@ -6,6 +6,6 @@ apt-get install -y default-jre-headless apache2
 #install vbench
 juju-log "Installing vdbench"
 mkdir vdbench
-tar -xvf vdbench*.tar -C vdbench
+tar -xv --no-same-owner --no-same-permissions -f vdbench*.tar -C vdbench
 cp /bin/bash /bin/csh
 cp vdbench/vdbench.bash vdbench/vdbench
