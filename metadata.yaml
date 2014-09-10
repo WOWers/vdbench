@@ -12,6 +12,8 @@ description: |
   /vdbench [compare] [gui] [dvpost] [edit] [jstack] [parse] [print] 
   [sds] [rsh] for some Vdbench utility functions
   - Additional examples and option specifications in the source tar.
+categories:
+- misc
 provides:
   website:
     interface: http
